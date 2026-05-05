@@ -38,24 +38,7 @@
             gap: .5rem;
         }
 
-        #wrap>nav {
-            background-color: #F1F5F9;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        #wrap>nav a {
-            text-decoration: none;
-            color: #222;
-            padding: 1rem;
-            transition: .2s;
-        }
-
-        #wrap>nav a:hover {
-            background-color: #222;
-            color: orange;
-        }
+        
 
         #wrap>main {
             background-color: orange;
@@ -158,29 +141,70 @@
             letter-spacing: .25rem;
         }
 
-        /* Media Queries - Telas maiores 768px */
+        /* Menu Principal */
 
+        #wrap>nav {
+            background-color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: .45rem;
+        }
+
+        #wrap>nav a i{
+            font-size: 2rem;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
+        }
+
+        #wrap>nav a:first-child {
+            margin-right: auto;
+        }
+        
+        /* Media Queries - Telas maioresa 768px */
         @media screen and (min-width: 768px) {
             #wrap>main {
                 flex-direction: row;
             }
 
             #wrap>main>aside {
-                /* flex: 0 0 220px; */
+                /* flex: 0 0 220px */
                 flex-shrink: 0;
                 flex-basis: 220px;
             }
         }
-
-        /* Media Queries - Telas maioresa 575px */
-        @media screen and (min-width: 575px) {
+        
+        /* Media Queries - Telas maiores 575px */
+        @media screen and (min-widht:575px) {
             
             #wrap>header {
                 flex-direction: row;
                 justify-content: space-between;
             }
-        
+
+            #wrap>nav a {
+                flex-direction: row;
+                gap: .25rem;
+            }
+
+            #wrap>nav a i {
+                font-size: 1.25rem;
+            }
         }
+
     </style>
 </head>
 
@@ -211,10 +235,11 @@
         </header>
 
         <nav>
-            <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
-            <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
-            <a href="#Contato"><i class="fa-solid fa-comments"></i><span>Contato</span></a>
-            <a href="#Sobre"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
+            <a href="#Início"><i class="fa-solid fa-house fa-fw"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list fa-fw"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments fa-fw"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info fa-fw"></i><span>Sobre</span></a>
+            <!-- <a href="#Login"><i class="fa-solid fa-right-to-bracket fa-fw"></i><span>Login</span></a> -->
         </nav>
 
         <main>
