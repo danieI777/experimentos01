@@ -1,54 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--- Folhas de estilo do site (GLOBAIS) -->
-    <link rel="stylesheet" href="css/style.css">
-    <!--- Folhas de estilo do "Font Awesome" (ICONES) -->
+    <!-- Pode importar o CSS do Font Awesome assim: 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>Olá Mundo!</title>
+    -->
+    <title>InovaNet</title>
+    <style>
+        /* Importa o CSS do font Awesome */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #wrap {
+            background-color: #F1F5F9;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        #wrap>nav {
+            background-color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: orange;
+        }
+
+        #wrap>main {
+            background-color: orange;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            flex-grow: 1;
+        }
+
+        #wrap>main>article {
+            background-color: rgb(56, 56, 189);
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        #wrap>main>aside {
+            background-color: rgb(108, 108, 236);
+            padding: 1rem;
+        }
+
+        #wrap>footer {
+            background-color: #F1F5F9;
+        }
+
+
+     
+
+        #wrap>header {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-logo{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .header-search input,
+        .header-search button {
+            /* Herda a fornte e o tamanho da fonte do body */
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        .header-search input {
+            flex-grow: 1;
+            border-radius: .4rem 0 0 .4rem;
+        }
+
+        .header-search button {
+            border-radius: 0 .4rem .4rem 0;
+            padding: .5rem;
+            background-color: (231, 231, 231);
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+        }
+
+        #wrap>header .logo {
+            font-size: 4rem;
+            color: orange;
+        }
+
+        #wrap>header .title {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap>header .title h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #wrap>header .title i {
+            font-size: small;
+            color: orange;
+        }
+
+        #wrap>header .title span {
+            color: orange;
+        }
+
+        #wrap>header .title small {
+            font-family: monospace;
+            letter-spacing: .25rem;
+        }
+
+        /* Media Queries - Telas maiores 768px */
+
+        @media screen and (min-width: 768px) {
+            #wrap>main {
+                flex-direction: row;
+            }
+
+            #wrap>main>aside {
+                /* flex: 0 0 220px; */
+                flex-shrink: 0;
+                flex-basis: 220px;
+            }
+        }
+
+        /* Media Queries - Telas maioresa 575px */
+        @media screen and (min-width: 575px) {
+            
+            #wrap>header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Elemento "container" dos outros elementos visuais -->
     <div id="wrap">
 
-        <!-- Cabeçalho da página -->
         <header>
-            
-            <a href="index.html">
-                <img src="img/logotipo.png" alt="Logotipo de Olá Mundo!">
-            </a>
-            <a href="index.html">
-                <h1>Olá Mundo!</h1>
-            </a>
-            
-        </header>
-    
-        <!--- Menu principal -->
-        <nav>
-            
-            <a href="index.html"><i class="fa-solid fa-igloo"></i> <span>Inicio</span></a>
-            <a href="list.html"><i class="fa-solid fa-list-ul"></i><span>Listagem</span></a>
-            <a href="contacts.html"><i class="fa-regular fa-comments"></i><span>Contatos</span></a>
-            <a href="about.html"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
+            <!-- Logotipo e nome do site -->
+            <div class="header-logo">
+                <a href="#Início" class="logo"><i class="fa-solid fa-cat fa-fw"></i></a>
+                <a href="#Início" class="title">
+                    <h1>
+                        <i class="fa-solid fa-less-than"></i>
+                        <span>M</span>undo<span>L</span>ink
+                        <i class="fa-solid fa-greater-than"></i>
+                    </h1>
+                    <small>Categorize tudo!</small>
+                </a>
+            </div>
 
+            <!-- Formulário de pesquisa -->
+            <form action="" method="get" class="header-search">
+                    <input type="search" name="q" placeholder="Pesquisa por...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></button>
+                </form>
+  
+        </header>
+
+        <nav>
+            <a href="#Início"><i class="fa-solid fa-house"></i><span>Início</span></a>
+            <a href="#Lista"><i class="fa-solid fa-clipboard-list"></i><span>Lista</span></a>
+            <a href="#Contato"><i class="fa-solid fa-comments"></i><span>Contato</span></a>
+            <a href="#Sobre"><i class="fa-solid fa-circle-info"></i><span>Sobre</span></a>
         </nav>
 
-        <!--- Conteúdo da página -->    
         <main>
-            CONTEÚDO PRINCIPAL
-            
-            <a href="https://microsoft.com" target="_blank">Site da Microsoft</a>
-        </main>
-        
-        <!--- Rodapé da página -->
-        <footer>
-            &copy; 2026 Joca da Silva
-        </footer>
 
-    <div> 
-    
+            <article>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
+                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
+                aliquam architecto laborum!
+
+            </article>
+
+            <aside>
+                <header>Conteúdo Auxiliar</header>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti harum maxime labore repellat id
+                ratione. Est magnam porro, tenetur molestias illo ipsam temporibus sunt doloribus rem perferendis
+                sapiente assumenda explicabo.
+            </aside>
+
+        </main>
+
+        <footer>Rodapé</footer>
+
+    </div>
+
 </body>
+
 </html>
