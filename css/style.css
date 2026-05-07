@@ -1,113 +1,281 @@
-/*
-css\style.css
-Folhas de estilo globais
-*/
+/* Importa o CSS do font Awesome */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
-/***********************************************************/
-/* Reset no CSS para se igualar em maioria dos navegadores */
-/***********************************************************/
+        /***************/
+        /* Reset geral */
+        /***************/
+        
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
 
-* {
-    outline: none;
-    box-sizing: border-box;
-}
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
 
-html, body {
-    /* Fonte padrao */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
-    /* Cria a unidade de medida "rem" 1rem = 16px */
-    font-size: 16px;
+        /* Links padrão */
 
-    /* Alguns ajustes visuais para permitir efeitor */
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: teal;
-}
+        a {
+            text-decoration: none;
+            color: black;
+        }
 
-/* Reset dos links */
+        a:hover {
+            color: orange;
+        }
 
-a {
-    color: teal;
-    text-decoration: none;
-}
+        /* Fundo da página */
 
-/* Quando passar ponteiro do mouse sobre */
-a:hover {
-    color: orange;
-}
+        body {
+            background-color: #333;
+            background-image: url("../img/fundocubos.avif");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: repeat; /* Padrão */
+        }
 
-/*********************/
-/* Elemento div#wrap */
-/*********************/
+        /* Elemento principal abaixo do body */
 
-#wrap {
-    /* Centralize esse elemento em relação ao elemento pai */
-    position: relative;
-    margin: auto;
-    background-color: white;
-    width: 100%;
-    max-width: 1080px;
-    height: 100%;
-}
+        #wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            max-width: 1080px;
+            margin: auto;
+            padding: 0 .5rem;
+        }
 
-/**********************/
-/* Cabeçalho (header) */
-/**********************/
+        /**********************/
+        /* Contéudo principal */
+        /**********************/
 
-header {
-    margin: .5rem;
-    background-color: black;
-    display: flex;
-    align-items: center;
-}
+        /* Elemento pai - flex */
 
-header img {
-    display: block;
-    height: 4rem;
-    margin-right: 1rem;
-}
+        #wrap>main {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            flex-grow: 1;
+        }
 
-header h1 {
-    margin: 0;
-    color: white;
-    -webkit-text-stroke: .5px rgb(255, 255, 255);
-}
+        /* Flexbox com contéudo principal */
 
-/***********************/
-/* Menu principal (nav)*/
-/***********************/
+        #wrap>main>article {
+            background-color: rgb(56, 56, 189);
+            padding: 1rem;
+            flex-grow: 1;
+            color: white;
+            border-radius: .4rem;
+        }
+        
+        /* Flexbox com contéudo complementar opcional */
 
-nav {
-    margin: .5rem;
-    background-color: black;
-    display: flex;
-    gap: .5rem;
-    justify-content: end;
-}
+        #wrap>main>aside {
+            background-color: rgb(108, 108, 236);
+            padding: 1rem;
+            color: white;
+            border-radius: .4rem;
+        }
 
-nav a {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: .25rem;
-}
+        /* Cabeçalho da pagina */
 
-nav a:hover {
-    background-color: orange;
-    transition: .2s;
-    color: white;
-}
+        #wrap>header {
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #fff;
+            border-top: none;
+            border-radius: 0 0 .5rem .5rem;
+        }
 
-nav i {
-    font-size: 2rem;
-    margin-bottom: .25rem;
-}
+        /* Formata um ícone como logotipo */
 
-/* Seleciona somente o primeiro elemento filho */
-nav a:first-child {
-    margin-right: auto;
-}
+        .header-logo{
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        /* Formulário de pesquisa */
+
+        .header-search {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .header-search input,
+        .header-search button {
+            /* Herda a fornte e o tamanho da fonte do body */
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            padding: .5rem 1rem;
+        }
+
+        .header-search input {
+            flex-grow: 1;
+            border-radius: .4rem 0 0 .4rem;
+        }
+
+        .header-search button {
+            border-radius: 0 .4rem .4rem 0;
+            padding: .5rem;
+            background-color: (231, 231, 231);
+        }
+
+        #wrap>header a {
+            text-decoration: none;
+        }
+
+        #wrap>header .logo {
+            font-size: 4rem;
+            color: rgb(108, 108, 236);
+        }
+
+        #wrap>header .title {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap>header .title h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #wrap>header .title i {
+            font-size: small;
+            color: #fff;
+        }
+
+        #wrap>header .title span {
+            color: rgb(56, 56, 189);
+        }
+
+        #wrap>header .title small {
+            font-family: monospace;
+            letter-spacing: .25rem;
+        }
+
+        /* Menu Principal */
+
+        #wrap>nav {
+            background-color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            border: 1px solid #fff;
+            border-radius: .4rem;
+        }
+
+        #wrap>nav a {
+            text-decoration: none;
+            color: #222;
+            padding: 1rem;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: .45rem;
+        }
+
+        #wrap>nav a i{
+            font-size: 2rem;
+        }
+
+        #wrap>nav a:hover {
+            background-color: #222;
+            color: rgb(108, 108, 236);
+        }
+
+        #wrap>nav a:first-child {
+            margin-right: auto;
+            border-radius: .45rem 0 0 .5rem;
+        }
+
+        #wrap>nav a:list-chid {
+            border-radius: 0 .45rem .45rem 0;
+        }
+
+        /* Rodapé */
+
+        #wrap>footer {
+            background-color: #fff;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #fff;
+            border-bottom: none;
+            border-radius: .4rem .4rem 0 0;
+        }
+
+        #wrap>footer> i {
+            font-size: 2rem;
+            padding: .5rem;
+        }
+
+        #wrap>footer a {
+            color: black;
+        }
+
+        #wrap>footer a:hover {
+            color: #333;
+        }
+        
+        /**********************************/
+        /* Media Queries - Responsividade */
+        /**********************************/
+        
+        /* Media Queries - Telas maioresa 768px */
+        
+        @media screen and (min-width: 768px) {
+            
+            /* Repodiciona os conteúdos */
+
+            #wrap>main {
+                flex-direction: row;
+            }
+
+            #wrap>main>aside {
+                
+                /* flex: 0 0 220px; → o mesmo que abaixo! */
+                
+                flex-shrink: 0;
+                flex-basis: 220px;
+            }
+        }
+        
+        /* Media Queries - Telas >= 575px */
+        @media screen and (min-widht:575px) {
+            
+            /* Reposiciona o formulário de pesquisa */
+            
+            #wrap>header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            /* Reposiciona o mnu principal */
+            
+            #wrap>nav a {
+                flex-direction: row;
+                gap: .25rem;
+            }
+
+            #wrap>nav a i {
+                font-size: 1.25rem;
+            }
+        
+        }
