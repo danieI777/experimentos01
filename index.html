@@ -4,76 +4,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Pode importar o CSS do Font Awesome assim: 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    -->
-    <link rel="shortcut icon" href="img/favicon.png">
-    <title>SuperRocket</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" integrity="sha256-pdY4ejLKO67E0CM2tbPtq1DJ3VGDVVdqAR6j3ZwdiE4=" crossorigin="anonymous">
+    <title>BootFront</title>
+    <style>
+        .template-aside {
+            background-color: #e3e3e3;
+        }
+
+        @media screen and (min-widht: 768px) {
+            .template-aside {
+               /* max-width: 220px; */
+            }
+        }
+    </style>
 </head>
 
-<body>
-
+<body class="bg-primary">
+    
     <a id="top"></a>
 
-    <div id="wrap">
-
-        <header>
-            <!--  Logotipo e nome do site -->
-            <div class="header-logo">
-                <a href="index.html" class="logo"><i class="fa-solid fa-cat fa-fw"></i></a>
-                <a href="index.html" class="title">
-                    <h1>
-                        <i class="fa-solid fa-less-than"></i>
-                        <span>S</span>uper<span>R</span>ocket
-                        <i class="fa-solid fa-greater-than"></i>
-                    </h1>
-                    <small>Categorize tudo!</small>
+    <header class="bg-dark fixed-top">
+        <nav class="container navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <h1 class="m-0 fs-4">Boot<i class="bi bi-bootstrap text-warning m-1"></i>Front</h1>
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Ínicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Lista</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sobre</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Faça Contato</a></li>
+                                <li><a class="dropdown-item" href="#">Sobre o Site</a></li>
+                                <li><a class="dropdown-item" href="#">Sobre o Autor</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Políticas de Privacidade</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-2 mt-sm-0">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="Pesquisar...">
+                            <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container pt-4 mt-5 bg-light d-flex flex-column flex-md-row">
+
+        <section class="p-3 flex-grow-1">
+            <h2>Título</h2>
+
+            <div class="card m-3 mx-auto" style="max-width: 300px;">
+                <img class="card-img-top" src="https://picsum.photos/400/200" alt="Imagem aleátória">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum molestiae, velit officia qui veritatis in, aliquid quos omnis cupiditate minus doloremque id necessitatibus tempore labore cum reiciendis ex alias officiis.</div>
+                <div class="card-footer">Rodapé</div> 
+
             </div>
 
-            <form action="" method="get" class="header-search">
-                <input type="search" name="q" placeholder="Pesquisar por...">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+            
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed omnis iste ipsum vel impedit magnam recusandae ut aperiam explicabo ex praesentium perferendis repudiandae cupiditate, voluptatibus saepe facilis facere nisi assumenda.</p>
+        </section>
 
-        </header>
+        <aside class="template-aside Flex-md-shrink-0 p-3 mb-3 rounded shadow-sm">
+            <h3>Conteúdo Complementar</h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem adipisci eaque at suscipit quisquam officiis molestiae aliquid! Minus quis tempore omnis corporis ipsam!
+        </aside>
 
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-house fa-fw"></i><span>Início</span></a>
-            <a href="list.html"><i class="fa-solid fa-clipboard-list fa-fw"></i><span>Lista</span></a>
-            <a href="contact.html"><i class="fa-solid fa-comments fa-fw"></i><span>Contato</span></a>
-            <a href="about.html"><i class="fa-solid fa-circle-info fa-fw"></i><span>Sobre</span></a>
-            <!-- <a href="#Login"><i class="fa-solid fa-right-to-bracket fa-fw"></i><span>Login</span></a> -->
-        </nav>
+    </main>
 
-        <main>
+    <footer class="bg-dark text-light">
+        <div class="d-flex justify-content-between justify-content-sm-around p-3"> 
 
-            <article>
-                <h2>Página inicial</h2>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, similique. Dicta illum natus
-                molestias sapiente sequi voluptatibus ab, excepturi numquam quos ex eum delectus doloribus nam iure
-                aliquam architecto laborum!
+            <div>
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li>
+                        <a href="https://instragram.com" target="_blank">
+                            <i class="bi bi-instagram"></i> <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="bi bi-facebook"></i> <span>Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com" target="_blank">
+                            <i class="bi bi-linkedin"></i> <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://youtube.com" target="_blank">
+                            <i class="bi bi-youtube"></i> <span>Youtube</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            </article>
+            <div class="d-none  d-sm-block">
+                <h4>Parceiros</h4>
+                <ul>
+                    <li><a href="#coca-cola">
+                            <i class="bi bi-person-heart"></i> <span>Coca-cola</span>
+                        </a></li>
+                    <li><a href="#maquidonalds">
+                            <i class="bi bi-person-heart"></i> <span>MacDonalds</span>
+                        </a></li>
+                    <li><a href="#Burguerquing">
+                            <i class="bi bi-person-heart"></i> <span>BurgerKing</span>
+                        </a></li>
+                    <li><a href="#pepici">
+                            <i class="bi bi-person-heart"></i> <span>Pepsi</span>
+                        </a></li>
+                </ul>
+            </div>
 
-            <aside>
-                <h3>Conteúdo Auxiliar</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti harum maxime labore repellat id
-                ratione. Est magnam porro, tenetur molestias illo ipsam temporibus sunt doloribus rem perferendis
-                sapiente assumenda explicabo.
-            </aside>
+            <div>
+                <h4>Acesso Rápido</h4>
+                <ul>
+                    <li>
+                        <a href="contacts.html">
+                            <i class="bi bi-chat-text-fill"></i> <span>Faça contato</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about-site.html">
+                            <i class="bi bi-info-circle-fill"></i> <span>Sobre o Site</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about-author.html">
+                            <i class="bi bi-person-badge"></i> <span>Sobre os autores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="privacy.html">
+                            <i class="bi bi-person-fill-lock"></i> <span>Sua privacidade</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
 
-        </main>
+        </div>
 
-        <footer>
-            <a href="index.html"><i class="fa-solid fa-house fa-fw"></i></a>
-            <div>&copy; 2026 Joca da Silva</div>
-            <a href="#top"><i class="fa-solid fa-circle-up fa-fw"></i></a>
-        </footer>
+        <div class="container d-flex justify-content-between align-items-center border-top">
+            <a href="index.html"><i class="bi bi-house-door-fill fs-1"></i></a>
+            <div>&copy; 2026 Daniel Oliveira</div>
+            <a href="#top"><i class="bi bi-arrow-up-square-fill fs-1"></i></a> 
+        </div>
 
-    </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
